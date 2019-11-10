@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import '../assets/Search.css';
+
 const Search = (props) => {
   const [searchValue, setSearchValue] = useState('');
 
@@ -21,11 +23,12 @@ const Search = (props) => {
   return (
     <form className="search">
       <input
+        className="search-input"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
       />
-      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      <input className="search-button" onClick={callSearchFunction} type="submit" value="SEARCH" />
     </form>
   );
 };

@@ -1,8 +1,12 @@
 import React, { useReducer, useEffect } from 'react';
-import '../App.css';
+
+import '../assets/Reset.css';
+import '../assets/App.css';
+
 import Header from './Header';
 import Movie from './Movie';
 import Search from './Search';
+
 import { MOVIE_API_URL, MOVIE_API_KEY } from '../utils/constants';
 
 const initialState = {
@@ -76,10 +80,10 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <Header text="Movies App" />
       <Search search={search} />
-      <p className="App-intro">Sharing a few of our favourite movies</p>
+      <h3 className="list-title">Sharing a few of our favourite movies:</h3>
       <div className="movies">
         {state.errorMessage ? (
           <div className="errorMessage">{state.errorMessage}</div>
@@ -89,7 +93,7 @@ const App = () => {
               <span>loading...</span>
             ) : (
               state.movies.map((movie) => (
-                <Movie key={`${movie.Title}`} movie={movie} />
+                <Movie key={`${movie.imdbID}`} movie={movie} />
               ))
             )}
           </>

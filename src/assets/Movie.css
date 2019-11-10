@@ -1,0 +1,28 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  text-decoration: none;
+}
+
+.movie-image {
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+
+.movie:hover .movie-image {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+.movie-title {
+  color: #333;
+  margin-top: 10px;
+  max-width: 180px;
+}
+
+.movie:hover .movie-title {
+  text-decoration: underline;
+}

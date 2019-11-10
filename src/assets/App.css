@@ -1,0 +1,30 @@
+.app {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  color: #333;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.list-title {
+  font-size: 1.4em;
+  padding: 0 20px 20px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.errorMessage {
+  margin: auto;
+  font-weight: bold;
+  color: rgb(161, 15, 15);
+}

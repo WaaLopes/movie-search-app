@@ -1,24 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DEFAULT_PLACEHOLDER_IMAGE = 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg';
+import '../assets/Movie.css';
+
+import { DEFAULT_PLACEHOLDER_IMAGE } from '../utils/constants';
 
 const Movie = ({ movie }) => {
   const poster = movie.Poster === 'N/A' ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
   return (
-    <div className="movie">
-      <h2>{movie.Title}</h2>
-      <div>
-        <img
-          width="200"
-          alt={`The movie titled: ${movie.Title}`}
-          src={poster}
-        />
-      </div>
-      <p>
-        {movie.Year}
+    <a
+      className="movie"
+      href={`https://www.imdb.com/title/${movie.imdbID}/`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        className="movie-image"
+        width="200"
+        alt={`The movie titled: ${movie.Title}`}
+        src={poster}
+      />
+      <p className="movie-title">
+        {`${movie.Title} - ${movie.Year}`}
       </p>
-    </div>
+    </a>
   );
 };
 
@@ -27,6 +32,7 @@ Movie.propTypes = {
     Poster: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,
     Year: PropTypes.string.isRequired,
+    imdbID: PropTypes.string.isRequired,
   }).isRequired,
 };
 
